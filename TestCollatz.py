@@ -15,7 +15,7 @@
 from io       import StringIO
 from unittest import main, TestCase
 
-from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, collatz_cycle_length, collatz_maxcl
 
 # -----------
 # TestCollatz
@@ -85,6 +85,65 @@ class TestCollatz (TestCase) :
         v = collatz_eval(210, 201)
         self.assertEqual(v, 89)
 
+    # ----
+    # cycle_length
+    # ----
+
+    def test_cyclelength1 (self) :
+        c = collatz_cycle_length(1)
+        self.assertEqual(c, 1)
+
+    def test_cyclelength2 (self) :
+        c = collatz_cycle_length(5)
+        self.assertEqual(c, 6)
+
+    def test_cyclelength3 (self) :
+        c = collatz_cycle_length(10)
+        self.assertEqual(c, 7)
+
+    def test_cyclelength4 (self) :
+        c = collatz_cycle_length(704)
+        self.assertEqual(c, 21)
+
+    def test_cyclelength5 (self) :
+        c = collatz_cycle_length(2)
+        self.assertEqual(c, 2)
+
+    # ----
+    # maxcl
+    # ----
+
+    def test_maxcl1 (self) :
+        m = collatz_maxcl(1, 10)
+        self.assertEqual(m, 20)
+
+    def test_maxcl2 (self) :
+        m = collatz_maxcl(100, 200)
+        self.assertEqual(m, 125)
+
+    def test_maxcl3 (self) :
+        m = collatz_maxcl(201, 210)
+        self.assertEqual(m, 89)
+
+    def test_maxcl4 (self) :
+        m = collatz_maxcl(900, 1000)
+        self.assertEqual(m, 174)
+
+    def test_maxcl5 (self) :
+        m = collatz_maxcl(1, 1)
+        self.assertEqual(m, 1)
+
+    def test_maxcl6 (self) :
+        m = collatz_maxcl(10, 11)
+        self.assertEqual(m, 15)
+
+    def test_maxcl7 (self) :
+        m = collatz_maxcl(1, 2)
+        self.assertEqual(m, 2)
+   
+    def test_maxcl8 (self) :
+        m = collatz_maxcl(10, 10)
+        self.assertEqual(m, 7)
     # -----
     # print
     # -----
