@@ -1,3 +1,15 @@
+commit 81f003959c65c7072e06b403e9f4748561e37c3d
+Author: samador88 <samador@utexas.edu>
+Date:   Tue Jun 16 23:01:17 2015 -0500
+
+    Create .gitignore
+
+commit 821a1f79709f75a36fe908a21b17402c76a41c05
+Author: Samantha Amador <sa4265@cs.utexas.edu>
+Date:   Tue Jun 16 22:45:27 2015 -0500
+
+    remade Collatz.log
+
 commit a03c94c2b712d184f60a2ba295ab3f4e8367b436
 Author: Samantha Amador <sa4265@cs.utexas.edu>
 Date:   Tue Jun 16 22:45:05 2015 -0500
