@@ -9,6 +9,8 @@
 # ------------
 # collatz_read
 # ------------
+global lst
+lst = [0] * 1000000
 
 def collatz_read (s) :
     """
@@ -70,14 +72,22 @@ def collatz_cycle_length(i):
     continue until reached 1
     """
     assert (i > 0)
+    current = i
+    if (current < 1000000 and lst[current] != 0):
+        return lst[i]
     c =1
     while i > 1 :
+        if (i < 1000000 and lst[i] != 0):
+           k = c - 1 + lst[i]
+           lst[current] = k
+           return k
         if (i % 2) == 0 :
             i = (i // 2)
         else :
             i = (3 * i) + 1
         c += 1
     assert (c > 0)
+    lst[current] = c
     return c
 
 # -------------
@@ -107,3 +117,4 @@ def collatz_solve (r, w) :
         i, j = collatz_read(s)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
