@@ -132,8 +132,6 @@ def collatz_solve (r, w) :
 
 import sys
 
-from Collatz import collatz_solve
-
 # ----
 # main
 # ----
